@@ -1,0 +1,45 @@
+diff --git a/src/Main.java b/src/Main.java
+index 24b1a55..7589e63 100644
+--- a/src/Main.java
++++ b/src/Main.java
+@@ -5,12 +5,15 @@ public class Main {
+ 
+         Device tv = new TvDevice();
+         Device radio = new RadioDevice();
++        Device projector = new ProjectorDevice();
+ 
+         Remote basicTV = new BasicRemote("A1", 30, tv);
+         Remote basicRadio = new BasicRemote("A1", 30, radio);
++        Remote basicProjector = new BasicRemote("A1", 30, projector);
+ 
+         Remote quietTV = new QuietRemote("A2", 5, tv);
+         Remote quietRadio = new QuietRemote("A2", 5, radio);
++        Remote quietProjector = new QuietRemote("A2", 5, projector);
+ 
+         System.out.println("T1: " + basicTV.execute());
+         System.out.println("T2: " + basicRadio.execute());
+@@ -26,5 +29,8 @@ public class Main {
+ 
+         System.out.println("T5 same object: " + (original == afterSwitch));
+         System.out.println("T5 after: " + afterSwitch.execute());
++
++        System.out.println("T6: " + basicProjector.execute());
++        System.out.println("T7: " + quietProjector.execute());
+     }
+ }
+\ No newline at end of file
+diff --git a/src/bridge/ProjectorDevice.java b/src/bridge/ProjectorDevice.java
+new file mode 100644
+index 0000000..bcf3ac8
+--- /dev/null
++++ b/src/bridge/ProjectorDevice.java
+@@ -0,0 +1,8 @@
++package bridge;
++
++public class ProjectorDevice implements Device{
++    @Override
++    public String applySettings(int volume){
++        return "Projector | power=ON | volume=" + volume;
++    }
++}
+\ No newline at end of file
