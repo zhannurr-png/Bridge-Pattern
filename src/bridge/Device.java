@@ -1,0 +1,5 @@
+package bridge;
+
+public interface Device {
+    String applySettings(int volume);
+}
