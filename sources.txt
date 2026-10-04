@@ -1,0 +1,8 @@
+src/bridge/QuietRemote.java
+src/bridge/ProjectorDevice.java
+src/bridge/RadioDevice.java
+src/bridge/Remote.java
+src/bridge/BasicRemote.java
+src/bridge/TvDevice.java
+src/bridge/Device.java
+src/Main.java
